@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Bar Charts</title>
+  </head>
+  <body>
+   <div class="container">
+       <canvas id="mychart"></canvas>
+   </div>
+
+   <script>
+       let mychart = document.getElementById('mychart').getContext('2d');
+       
+       Chart.defaults.global.defaultFontFamily = 'Lato';
+       Chart.defaults.global.defaultFontSize = 18;
+       Chart.defaults.global.defaultFontColor = '#777';
+
+       
+       let massPopChart = new Chart(mychart, {
+           type:'bar',
+           data:{
+               labels:['Boston', 'Worcester', 'SpringField','Lowell', 'Cambridge', 'New Bedford'],
+               datasets:[{
+                   label:'Population',
+                   data:[
+                       617468,
+                       182345,
+                       156439,
+                       106519,
+                       105162,
+                       95072,
+                   ],
+                   backgroundColor:[
+                       'pink', 'lightblue', 'yellow', 'lightgreen', 'orchid', 'orange',
+                   ],
+                   borderWidth:1,
+                   borderColor:'#777',
+                   hoverBorderWidth:3,
+                   hoverBorderColor:'#000'
+                }]
+           },
+       })
+   </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  </body>
+</html>
