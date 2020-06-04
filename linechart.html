@@ -9,51 +9,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Line Chart</title>
+    <title>Bar Charts</title>
   </head>
   <body>
    <div class="container">
-       <canvas id="linechart" style="height: 300px; width: 100%;"></canvas>
+       <canvas id="mychart" style="height: 300px; width: 100%;"></canvas>
    </div>
 
    <script>
-    let linechart = document.getElementById('mychart');
-    let massPopChart = new Chart(linechart, {
-        type: 'line',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'july'],
-            datasets: [
+       let mychart = document.getElementById('mychart');
+       
+       Chart.defaults.global.defaultFontFamily = 'Lato';
+       Chart.defaults.global.defaultFontSize = 18;
+      
+
+       
+       let massPopChart = new Chart(mychart, {
+           type:'line',
+           data:{
+               labels:['Boston', 'Worcester', 'SpringField','Lowell', 'Cambridge', 'New Bedford'],
+               datasets:[{
+                   label:'Population',
+                   fillColor : "rgba(220,220,220,0.5)",
+			       strokeColor : "rgba(220,220,220,1)",
+			       pointColor : "rgba(220,220,220,1)",
+			       pointStrokeColor : "#fff",
+			       data : [65,59,90,81,56,55,40],
+                   
+
+
+                },
                 {
-                    label: 'My first dataset',
-                    fill: false,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDasOffset:0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor:"rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220, 220, 220,1)",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                    data: [65, 59, 80, 81, 56, 55, 40],
-
-
+                    label:"Trees",
+                    fillColor : "rgba(218, 247, 166 )",
+			        strokeColor : "rgba(218, 247, 166 )",
+			        pointColor : "rgba(151,187,205,1)",
+			        pointStrokeColor : "#fff",
+			        data:[28,48,40,19,96,27,100],
+                    
                 }
-            ]
-        }
-    });
+                ]
+            
+           },
+           
+       })
+   </script>
 
-</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-</body>
+  </body>
 </html>
